@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tracker d'Habitudes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <style></style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Tracker d'Habitudes 🌱</h1>
+      <button class="btn" id="resetAllBtn" title="Tout réinitialiser">↺ Réinitialiser</button>
+    </div>
+    <form class="add-habit" id="addHabitForm" autocomplete="off">
+      <input type="text" id="habitInput" placeholder="Nouvelle habitude..." required maxlength="28">
+      <input type="number" id="habitTarget" min="1" max="366" value="7" title="Objectif" style="width:70px;" />
+      <button type="submit" class="btn">Ajouter</button>
+    </form>
+    <div class="habits-list" id="habitsList">
+      <!-- Habits rendered here -->
+    </div>
+    <div class="badges-section" id="badgesSection">
+      <div class="badges-title">🏅 Récompenses</div>
+      <div class="badges-list" id="badgesList">
+        <!-- Badges -->
+      </div>
+    </div>
+    <div class="history-section">
+      <div class="history-title">Historique <span style="font-size:0.9em;font-weight:400;color:#789;">(30 derniers jours)</span></div>
+      <button class="export-btn" id="exportCSVBtn">Exporter en CSV</button>
+      <table class="history-table" id="historyTable">
+        <!-- History generated here -->
+      </table>
+    </div>
+  </div>
+
+  <template id="habitCardTemplate">
+    <div class="habit-card">
+      <button class="remove-btn" title="Supprimer">✕</button>
+      <div class="circle-container">
+        <svg class="progress-ring" width="92" height="92">
+          <circle class="progress-bg" cx="46" cy="46" r="40" stroke-width="10" fill="none"/>
+          <circle class="progress-bar" cx="46" cy="46" r="40" stroke-width="10" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="habit-title"></div>
+      <div class="count"></div>
+      <div class="habit-controls">
+        <button class="btn minus" title="Décrémenter">–</button>
+        <button class="btn plus" title="Incrémenter">+</button>
+      </div>
+    </div>
+  </template>
+
+  <script></script>
+</body>
+</html>
